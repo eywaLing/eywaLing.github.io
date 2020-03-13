@@ -3,9 +3,10 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
+@import 'libs/html-grid';
 
 /*
-	Multiverse by HTML5 UP
+	Astral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -13,9 +14,27 @@
 /* Wrapper */
 
 	#wrapper {
-		body.is-preload & {
-			&:before {
+		opacity: 1 !important;
+	}
+
+/* Nav */
+
+	#nav {
+		a {
+			opacity: 1.0;
+
+			&:before,
+			&:after {
 				display: none;
+			}
+
+			span {
+				top: 0;
+				opacity: 1.0;
+
+				&:after {
+					display: none;
+				}
 			}
 		}
 	}
@@ -23,18 +42,15 @@
 /* Main */
 
 	#main {
-		body.is-preload & {
-			.thumb {
-				@include vendor('pointer-events', 'auto');
-				opacity: 1;
+		background: none;
+		box-shadow: none;
+
+		> .panel {
+			background: #ffffff;
+			margin-bottom: 2em;
+
+			&:last-child {
+				margin-bottom: 0;
 			}
-		}
-	}
-
-/* Header */
-
-	#header {
-		body.is-preload & {
-			@include vendor('transform', 'none');
 		}
 	}
