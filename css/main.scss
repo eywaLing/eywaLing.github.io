@@ -1,53 +1,32 @@
 ---
+layout: null
+sitemap: false
 ---
 
-// Our variables
-$base-font-family: 'Libre Baskerville', serif;
-$head-font-family: 'Open Sans', sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 500;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.8;
-$spacing-unit:     30px;
+$baseurl: "{{ site.baseurl }}";
+$body-background-color: #2B2E31;
 
-$text-color:       #555;
-$background-color: #fdfdfd;
-$brand-color:      #514A9D;
-$brand-color-2:    #24C6DC;
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$content-max-width: 800px;
+$content-color: #222;
+$content-background-color: #fff;
 
-// Width of the content area
-$content-width:    800px;
-$on-iphone:        480px;
-$on-palm:          600px;
-$on-laptop:        800px;
+$brand-colour: #3583d6;
+$brand-colour-light: mix($brand-colour, $content-background-color, 10%);
 
+$nav-header-background-color: $brand-colour;
+$nav-header-height: 60px;
+$nav-background-color: #f5f5f5;
+$nav-width: 300px;
 
+$space: 20px;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
+$mobile-break: 700px;
+$full-width-break: $nav-width + ($space * 4) + $content-max-width;
 
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "header",
-        "sidebar",
-        "cards",
-        "post",
-        "layout"
-
-;
+@import "mixins";
+@import "normalize";
+@import "pygments";
+@import "typography";
+@import "code";
+@import "tables";
+@import "layout";
